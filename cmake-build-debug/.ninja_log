@@ -1,0 +1,8 @@
+# ninja log v5
+6	1700	7579851355814589	CMakeFiles/PokerGame_2.dir/src/Card.cpp.obj	3961a3d18a7fd9e2
+12	1575	7579851354527878	CMakeFiles/PokerGame_2.dir/main.cpp.obj	5c44331ce7989054
+22	2036	7579851359148608	CMakeFiles/PokerGame_2.dir/src/Player.cpp.obj	be16b5dcd5d5d62b
+6	1369	7579863984181094	CMakeFiles/PokerGame_2.dir/src/Game.cpp.obj	4092922277c28f78
+2	832	7579869219760045	build.ninja	c4d1a2eefa1fd858
+31	1726	7579851356075897	CMakeFiles/PokerGame_2.dir/src/Utilities.cpp.obj	e300371f8c71e7a4
+1369	2381	7579863994219692	PokerGame_2.exe	56959ef9bbfa0072

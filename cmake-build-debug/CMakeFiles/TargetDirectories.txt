@@ -1,0 +1,3 @@
+C:/Users/Vlad/Desktop/Programare/CLionProjects/Facultate/PokerGame_2/cmake-build-debug/CMakeFiles/PokerGame_2.dir
+C:/Users/Vlad/Desktop/Programare/CLionProjects/Facultate/PokerGame_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Vlad/Desktop/Programare/CLionProjects/Facultate/PokerGame_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
