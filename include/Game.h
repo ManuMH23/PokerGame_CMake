@@ -7,6 +7,10 @@
 #include <list>
 #include <string>
 #include "Player.h"
+#include "Utilities.h"
+#include "Enums.h"
+#include "Card.h"
+
 using namespace std;
 class Game {
 public:

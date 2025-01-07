@@ -1,20 +1,12 @@
 #include "../include/Game.h"
-#include "../include/Utilities.h"
-#include "../include/Enums.h"
-#include <list>
-#include <chrono>
-#include <thread>
 #include <iostream>
 
 using namespace std;
 
-Game::Game(int numberOfPlayers)
-{
-
+Game::Game(int numberOfPlayers) {
     auto names = Utilities::getAIPlayerNames(Utilities::getPokerPlayers(), numberOfPlayers - 1);
 
-    for (auto name : names)
-    {
+    for (auto name : names) {
         players.push_back(PlayerFactory::createPlayer(COMPUTER, name));
     }
 
@@ -25,36 +17,27 @@ Game::Game(int numberOfPlayers)
     table = PileOfCards<Card>(COMMUNITY_CARDS);
 }
 
-Game::~Game()
-{
-    for (auto player : players)
-    {
+Game::~Game() {
+    for (auto player : players) {
         PlayerFactory::deletePlayer(player);
     }
 }
 
-void Game::playRound()
-{
+void Game::playRound() {
     deck->shuffle();
-    for (auto player : players)
-    {
+    for (auto player : players) {
         player->clearHand();
     }
 
-    for (int i = 0; i < 2; i++)
-    {
-        for (auto player : players)
-        {
-
+    for (int i = 0; i < 2; i++) {
+        for (auto player : players) {
             player->getCard(deck->draw());
         }
     }
 
-    for (auto player : players)
-    {
+    for (auto player : players) {
         Utilities::waitOneSecond();
-        if(!player->isFolded())
-        {
+        if (!player->isFolded()) {
             player->play();
         }
     }
@@ -70,7 +53,6 @@ void Game::play() {
             break;
         }
     }
-
 }
 
 
