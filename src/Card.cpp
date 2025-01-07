@@ -1,5 +1,5 @@
 #include "../include/Card.h"
-#include <Map>
+#include <map>
 #include <algorithm>
 #include <random>
 #include <ctime>
