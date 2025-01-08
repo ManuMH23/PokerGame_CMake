@@ -14,9 +14,9 @@ using namespace std;
 
 class Utilities {
 public:
-    static const unordered_map<CardType, string>& getCardTypeString();
+    inline static const unordered_map<CardType, string>& getCardTypeString();
 
-    static const unordered_map<CardNumber, string>& getCardNumberString();
+    inline static const unordered_map<CardNumber, string>& getCardNumberString();
 
     inline static const list<string>& getPokerPlayers();
 
