@@ -4,8 +4,6 @@ project(PokerGame_2)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-
-
 # Add executable and source files
 add_executable(PokerGame_2
         main.cpp
@@ -16,3 +14,4 @@ add_executable(PokerGame_2
 )
 
 # Ensure include directories are set correctly
+target_include_directories(PokerGame_2 PRIVATE ${CMAKE_SOURCE_DIR}/include)
