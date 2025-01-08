@@ -5,8 +5,18 @@ project(PokerGame_2)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(MAIN_PROJECT_NAME "PokerGame")
+set(MAIN_EXECUTABLE_NAME "${MAIN_PROJECT_NAME}")
+
 # Include the directories for header files
 include_directories(${CMAKE_SOURCE_DIR}/include)
+file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/*")
+file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_SOURCE_DIR} "include/*")
+
+target_include_directories(${MAIN_EXECUTABLE_NAME} SYSTEM PRIVATE generated/include)
+
+include_directories(include)
+include_directories(src)
 
 # Collect all source files from the src directory and main.cpp
 file(GLOB SOURCES "src/*.cpp" "main.cpp")
@@ -14,10 +24,9 @@ file(GLOB SOURCES "src/*.cpp" "main.cpp")
 file(GLOB SOURCES2 "include/*.h" "main.cpp")
 
 # Add the executable target with all source files
-add_executable(PokerGame_2 ${SOURCES} ${SOURCES2})
+add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES})
 
 # Ensure the include directory is part of the build process
-target_include_directories(PokerGame_2 PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # Optional: Link additional libraries if needed
 # target_link_libraries(PokerGame_2 PRIVATE <library_name>)
