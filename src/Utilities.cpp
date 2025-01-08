@@ -18,6 +18,18 @@ const list<string>& Utilities::getPokerPlayers()
     return pokerPlayers;
 }
 
+const unordered_map<WinCondition,string> Utilities::winConditionString = {
+        { HIGH_CARD, "High Card" },
+        { ONE_PAIR, "One Pair" },
+        { TWO_PAIRS, "Two Pairs" },
+        { THREE_OF_A_KIND, "Three of a Kind" },
+        { STRAIGHT, "Straight" },
+        { FLUSH, "Flush" },
+        { FULL_HOUSE, "Full House" },
+        { FOUR_OF_A_KIND, "Four of a Kind" },
+        { STRAIGHT_FLUSH, "Straight Flush" },
+        { ROYAL_FLUSH, "Royal Flush" }
+};
 
 const unordered_map<CardType, string> Utilities::cardTypeString = {
         { HEARTS, "Hearts" },
@@ -87,5 +99,9 @@ bool Utilities::isStraight(const vector<CardNumber> &numbers, int wildCardCount)
         }
     }
     return false;
+}
+
+const string &Utilities::getWinConditionString(WinCondition condition) {
+    return winConditionString.at(condition);
 }
 

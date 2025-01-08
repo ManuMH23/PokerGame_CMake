@@ -11,6 +11,7 @@
 #include <random>
 #include "Utilities.h"
 #include "Enums.h"
+#include <exception>
 
 using namespace std;
 
@@ -81,6 +82,8 @@ private:
 class Card {
 public:
     inline Card(CardType type, CardNumber number) : type(type), number(number) {}
+    inline Card(const Card& other);
+    ~Card() = default;
     inline virtual ~Card() = default;
     inline CardType getType() const;
     inline CardNumber getNumber() const;
@@ -130,6 +133,8 @@ public:
 
     inline void clear();
 
+    inline void displayCards();
+
     inline bool isEmpty() const;
 
     inline int size() const;
@@ -139,8 +144,16 @@ public:
 private:
     inline CommunityCards() : maxCards(5) {}
     static CommunityCards* instance;
-    PileOfCards<Card> cards;
+    PileOfCards<Card> cards = PileOfCards<Card>(COMMUNITY_CARDS);
     const int maxCards;
+};
+
+
+class DeckEmptyException : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Deck is empty.";
+    }
 };
 
 

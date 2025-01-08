@@ -11,6 +11,6 @@
 int main()
 {
     PokerGame game(5);
-    game.playRound();
+    game.play();
 }
 

@@ -12,6 +12,12 @@ using namespace std;
 //	this->number = number;
 //}
 
+Card::Card(const Card &other)
+{
+    this->type = other.type;
+    this->number = other.number;
+}
+
 CardType Card::getType() const
 {
     return (CardType)this->type;
@@ -65,7 +71,7 @@ Card Deck::draw()
 
     if (cards.empty())
     {
-        throw std::out_of_range("Deck is empty.");
+        throw DeckEmptyException();
     }
     Card card = cards.back();
     cards.pop_back();
@@ -91,8 +97,8 @@ void Deck::shuffle()
             cards.emplace_back(static_cast<CardType>(t), static_cast<CardNumber>(n));
         }
     }
-    cards.emplace_back(CLUBS, JOKER);
-    cards.emplace_back(SPADES, JOKER);
+    cards.emplace_back(Card(CLUBS, JOKER));
+    cards.emplace_back(Card(SPADES, JOKER));
 
     auto rng = default_random_engine(static_cast<unsigned>(std::time(nullptr)));
     std::for_each(cards.begin(), cards.end(), [&](Card&)
@@ -137,6 +143,16 @@ Deck* Deck::getInstance()
 #pragma region CommunityCards
 
 CommunityCards* CommunityCards::instance = nullptr;
+
+void CommunityCards::displayCards() {
+    cout << "\n \nCards on the table: \n";
+
+    for (int i = 0; i < cards.size(); i++)
+    {
+        cout<< cards.at(i) << "\n";
+    }
+    std::cout << std::endl;
+}
 
 CommunityCards *CommunityCards::getInstance() {
     if (!instance) {

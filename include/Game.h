@@ -18,9 +18,12 @@ public:
     inline ~PokerGame();
     inline void playRound();
     inline void play();
+    inline void displayCardsOnTable();
+    inline bool isOnlyOnePlayerLeft();
+    inline void displayWinner();
 private:
     list<Player*> players;
-    PileOfCards<Card> table;
+    CommunityCards* table = nullptr;
     Deck* deck = nullptr;
 };
 

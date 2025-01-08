@@ -14,9 +14,8 @@ using namespace std;
 
 class Utilities {
 public:
-    inline static const unordered_map<CardType, string>& getCardTypeString();
 
-    inline static const unordered_map<CardNumber, string>& getCardNumberString();
+    inline static const string& getWinConditionString(WinCondition condition);
 
     inline static const list<string>& getPokerPlayers();
 
@@ -32,6 +31,7 @@ public:
 private:
     static const unordered_map<CardType, string> cardTypeString;
     static const unordered_map<CardNumber, string> cardNumberString;
+    static const unordered_map<WinCondition, string> winConditionString;
     static const list<string> pokerPlayers;
 };
 #endif //POKERGAME_2_UTILITIES_H
