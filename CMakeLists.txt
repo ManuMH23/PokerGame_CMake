@@ -13,24 +13,14 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/*")
 file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_SOURCE_DIR} "include/*")
 
-target_include_directories(${MAIN_EXECUTABLE_NAME} SYSTEM PRIVATE generated/include)
-
-include_directories(include)
-include_directories(src)
-
 # Collect all source files from the src directory and main.cpp
 file(GLOB SOURCES "src/*.cpp" "main.cpp")
 
-file(GLOB SOURCES2 "include/*.h" "main.cpp")
-
 # Add the executable target with all source files
 add_executable(PokerGame main.cpp src/Card.cpp src/Game.cpp src/Player.cpp src/Utilities.cpp)
+
+# Specify include directories for the PokerGame target
 target_include_directories(PokerGame PRIVATE include)
-
-# Ensure the include directory is part of the build process
-
-# Optional: Link additional libraries if needed
-# target_link_libraries(PokerGame_2 PRIVATE <library_name>)
 
 # Print debug information during CMake generation
 message(STATUS "Source files: ${SOURCES}")
