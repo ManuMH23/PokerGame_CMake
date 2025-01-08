@@ -2,8 +2,8 @@
 // Created by Vlad on 1/7/2025.
 //
 
-#ifndef POKERGAME_2_ENUMS_H
-#define POKERGAME_2_ENUMS_H
+#ifndef POKERGAME_2_CMAKE_ENUMS_H
+#define POKERGAME_2_CMAKE_ENUMS_H
 #include <list>
 #include <string>
 

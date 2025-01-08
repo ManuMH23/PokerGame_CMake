@@ -2,8 +2,8 @@
 // Created by Vlad on 1/7/2025.
 //
 
-#ifndef POKERGAME_2_UTILITIES_H
-#define POKERGAME_2_UTILITIES_H
+#ifndef POKERGAME_2_CMAKE_UTILITIES_H
+#define POKERGAME_2_CMAKE_UTILITIES_H
 #include <unordered_map>
 #include "Card.h"
 #include "Enums.h"

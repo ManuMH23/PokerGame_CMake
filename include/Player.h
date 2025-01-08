@@ -2,8 +2,8 @@
 // Created by Vlad on 1/7/2025.
 //
 
-#ifndef POKERGAME_2_PLAYER_H
-#define POKERGAME_2_PLAYER_H
+#ifndef POKERGAME_2_CMAKE_PLAYER_H
+#define POKERGAME_2_CMAKE_PLAYER_H
 #include "Card.h"
 #include "Enums.h"
 #include <vector>

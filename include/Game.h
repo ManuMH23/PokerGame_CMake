@@ -2,8 +2,8 @@
 // Created by Vlad on 1/7/2025.
 //
 
-#ifndef POKERGAME_2_GAME_H
-#define POKERGAME_2_GAME_H
+#ifndef POKERGAME_2_CMAKE_GAME_H
+#define POKERGAME_2_CMAKE_GAME_H
 #include <list>
 #include <string>
 #include "Player.h"

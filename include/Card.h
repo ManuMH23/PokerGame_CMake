@@ -2,8 +2,8 @@
 // Created by Vlad on 1/7/2025.
 //
 
-#ifndef POKERGAME_2_CARD_H
-#define POKERGAME_2_CARD_H
+#ifndef POKERGAME_2_CMAKE_CARD_H
+#define POKERGAME_2_CMAKE_CARD_H
 #include <iostream>
 #include <string>
 #include <vector>
