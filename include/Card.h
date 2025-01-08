@@ -84,7 +84,7 @@ public:
     inline Card(CardType type, CardNumber number) : type(type), number(number) {}
     inline Card(const Card& other);
     ~Card() = default;
-    inline virtual ~Card() = default;
+
     inline CardType getType() const;
     inline CardNumber getNumber() const;
     inline virtual bool isWild() const;
