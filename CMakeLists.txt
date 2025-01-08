@@ -4,8 +4,7 @@ project(PokerGame_2)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Add include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
+
 
 # Add executable and source files
 add_executable(PokerGame_2
