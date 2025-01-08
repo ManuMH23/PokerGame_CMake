@@ -1,4 +1,4 @@
-
+#include "../include/Utilities.h"
 
 string Utilities::cardTypeToString(CardType type)
 {
