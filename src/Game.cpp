@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Game::Game(int numberOfPlayers) {
+PokerGame::PokerGame(int numberOfPlayers) {
     auto names = Utilities::getAIPlayerNames(Utilities::getPokerPlayers(), numberOfPlayers - 1);
 
     for (auto name : names) {
@@ -17,13 +17,13 @@ Game::Game(int numberOfPlayers) {
     table = PileOfCards<Card>(COMMUNITY_CARDS);
 }
 
-Game::~Game() {
+PokerGame::~PokerGame() {
     for (auto player : players) {
         PlayerFactory::deletePlayer(player);
     }
 }
 
-void Game::playRound() {
+void PokerGame::playRound() {
     deck->shuffle();
     for (auto player : players) {
         player->clearHand();
@@ -43,7 +43,7 @@ void Game::playRound() {
     }
 }
 
-void Game::play() {
+void PokerGame::play() {
     while (true) {
         playRound();
         cout << "Do you want to play another round? (y/n): ";

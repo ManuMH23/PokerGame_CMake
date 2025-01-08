@@ -8,7 +8,7 @@
 
 int main()
 {
-    Game game(5);
-    game.play();
+    PokerGame game(5);
+    game.playRound();
 }
 

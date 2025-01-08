@@ -12,10 +12,10 @@
 #include "Card.h"
 
 using namespace std;
-class Game {
+class PokerGame {
 public:
-    Game(int numberOfPlayers = 5);
-    ~Game();
+    PokerGame(int numberOfPlayers = 5);
+    ~PokerGame();
     void playRound();
     void play();
 private:

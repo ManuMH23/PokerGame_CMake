@@ -12,7 +12,7 @@ using namespace std;
 
 class Player {
 public:
-    Player() = default;
+    Player() : folded(false), money(0), winCondition(WinCondition::HIGH_CARD), state(PlayerState::NORMAL) {}
     virtual ~Player() = default;
     virtual void play() = 0;
     virtual void MakeMove(PlayerMove move) = 0;
