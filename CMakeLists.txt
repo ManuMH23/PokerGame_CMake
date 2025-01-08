@@ -16,4 +16,4 @@ add_executable(PokerGame_2
 )
 
 # Ensure include directories are set correctly
-target_include_directories(PokerGame_2 PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(PokerGame_2 ${CMAKE_SOURCE_DIR}/include)
