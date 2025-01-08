@@ -18,17 +18,17 @@ public:
 
     static const unordered_map<CardNumber, string>& getCardNumberString();
 
-    static const list<string>& getPokerPlayers();
+    inline static const list<string>& getPokerPlayers();
 
-    static string cardTypeToString(CardType type);
+    inline static string cardTypeToString(CardType type);
 
-    static string cardNumberToString(CardNumber number);
+    inline static string cardNumberToString(CardNumber number);
 
-    static list<string> getAIPlayerNames(const list<string>& playerList, int count);
+    inline static list<string> getAIPlayerNames(const list<string>& playerList, int count);
 
-    static void waitOneSecond();
+    inline static void waitOneSecond();
 
-    static bool isStraight(const std::vector<CardNumber>& numbers, int wildCardCount);
+    inline static bool isStraight(const std::vector<CardNumber>& numbers, int wildCardCount);
 private:
     static const unordered_map<CardType, string> cardTypeString;
     static const unordered_map<CardNumber, string> cardNumberString;

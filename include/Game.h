@@ -14,10 +14,10 @@
 using namespace std;
 class PokerGame {
 public:
-    PokerGame(int numberOfPlayers = 5);
-    ~PokerGame();
-    void playRound();
-    void play();
+    inline PokerGame(int numberOfPlayers = 5);
+    inline ~PokerGame();
+    inline void playRound();
+    inline void play();
 private:
     list<Player*> players;
     PileOfCards<Card> table;

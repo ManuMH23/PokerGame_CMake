@@ -12,17 +12,17 @@ using namespace std;
 
 class Player {
 public:
-    Player() : folded(false), money(0), winCondition(WinCondition::HIGH_CARD), state(PlayerState::NORMAL) {}
-    virtual ~Player() = default;
-    virtual void play() = 0;
-    virtual void MakeMove(PlayerMove move) = 0;
-    virtual WinCondition getPowerLevel() = 0;
+    inline Player() : folded(false), money(0), winCondition(WinCondition::HIGH_CARD), state(PlayerState::NORMAL) {}
+    inline virtual ~Player() = default;
+    inline virtual void play() = 0;
+    inline virtual void MakeMove(PlayerMove move) = 0;
+    inline virtual WinCondition getPowerLevel() = 0;
     //virtual void  checkPowerLevel() = 0;
-    void clearHand() { hand.clear(); }
-    void getCard(const Card card) { hand.addCard(card); }
-    void fold() { folded = true; }
-    void unfold() { folded = false; }
-    bool isFolded() { return folded; }
+    inline void clearHand() { hand.clear(); }
+    inline void getCard(const Card card) { hand.addCard(card); }
+    inline void fold() { folded = true; }
+    inline void unfold() { folded = false; }
+    inline bool isFolded() { return folded; }
 protected:
     bool folded = false;
     string name;
@@ -34,27 +34,27 @@ protected:
 
 class HumanPlayer : public Player {
 public:
-    HumanPlayer();
-    void play() override;
+    inline HumanPlayer();
+    inline void play() override;
     //void checkPowerLevel() override;
-    void MakeMove(PlayerMove move) override;
-    WinCondition getPowerLevel() override;
+    inline void MakeMove(PlayerMove move) override;
+    inline WinCondition getPowerLevel() override;
 };
 
 class ComputerPlayer : public Player {
 public:
-    ComputerPlayer();
-    ComputerPlayer(const string playerName);
-    void play() override;
+    inline ComputerPlayer();
+    inline ComputerPlayer(const string playerName);
+    inline void play() override;
     //void checkPowerLevel() override;
-    void MakeMove(PlayerMove move) override;
-    WinCondition getPowerLevel() override;
+    inline void MakeMove(PlayerMove move) override;
+    inline WinCondition getPowerLevel() override;
 
 };
 
 class PlayerFactory {
 public:
-    static Player* createPlayer(const PlayerType& type, string name = "")
+    inline static Player* createPlayer(const PlayerType& type, string name = "")
     {
         if (type == HUMAN)
         {
@@ -67,7 +67,7 @@ public:
         return nullptr;
     }
 
-    static void deletePlayer(Player* player)
+    inline static void deletePlayer(Player* player)
     {
         if (player)
         {

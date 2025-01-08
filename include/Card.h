@@ -18,8 +18,8 @@ using namespace std;
 template <typename T>
 class PileOfCards {
 public:
-    PileOfCards(TemplateType type = PLAYER_HAND) : maxCards((int)type) {};
-    void addCard(const T& card)
+    inline PileOfCards(TemplateType type = PLAYER_HAND) : maxCards((int)type) {};
+    inline void addCard(const T& card)
     {
         if (cards.size() < maxCards)
         {
@@ -31,12 +31,12 @@ public:
         }
     }
 
-    void clear()
+    inline void clear()
     {
         cards.clear();
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const PileOfCards& hand)
+    inline friend std::ostream& operator<<(std::ostream& os, const PileOfCards& hand)
     {
         for (const T& card : hand.cards)
         {
@@ -45,17 +45,17 @@ public:
         return os;
     }
 
-    bool isEmpty() const
+    inline bool isEmpty() const
     {
         return cards.empty();
     }
 
-    int size() const
+    inline int size() const
     {
         return cards.size();
     }
 
-    T at(int pos) const
+    inline T at(int pos) const
     {
         return cards.at(pos);
     }
@@ -80,14 +80,14 @@ private:
 
 class Card {
 public:
-    Card(CardType type, CardNumber number) : type(type), number(number) {}
-    virtual ~Card() = default;
-    CardType getType() const;
-    CardNumber getNumber() const;
-    virtual bool isWild() const;
-    friend std::ostream& operator<<(std::ostream& os, const Card& card);
-    bool operator==(const Card& other) const;
-    bool operator<(const Card& other) const;
+    inline Card(CardType type, CardNumber number) : type(type), number(number) {}
+    inline virtual ~Card() = default;
+    inline CardType getType() const;
+    inline CardNumber getNumber() const;
+    inline virtual bool isWild() const;
+    inline friend std::ostream& operator<<(std::ostream& os, const Card& card);
+    inline bool operator==(const Card& other) const;
+    inline bool operator<(const Card& other) const;
 protected:
     CardType type;
     CardNumber number;
@@ -95,49 +95,49 @@ protected:
 
 class WildCard : public Card {
 public:
-    WildCard(CardType type) : Card(type, JOKER) {}
+    inline WildCard(CardType type) : Card(type, JOKER) {}
 
-    bool isWild() const override;
+    inline bool isWild() const override;
 
-    friend std::ostream& operator<<(std::ostream& os, const WildCard& card);
+    inline friend std::ostream& operator<<(std::ostream& os, const WildCard& card);
 };
 
 
 class Deck {
 protected:
-    Deck();
+    inline Deck();
     static Deck* instance;
     std::vector<Card> cards;
 
 public:
-    static Deck* getInstance();
+    inline static Deck* getInstance();
 
-    Deck(const Deck& other) = delete;
-    void operator=(const Deck&) = delete;
+    inline Deck(const Deck& other) = delete;
+    inline void operator=(const Deck&) = delete;
 
-    void shuffle();
+    inline void shuffle();
 
-    Card draw();
+    inline Card draw();
 
-    bool isEmpty() const;
+    inline bool isEmpty() const;
 };
 
 class CommunityCards {
 public:
-    static CommunityCards* getInstance();
+    inline static CommunityCards* getInstance();
 
-    void addCard(const Card& card);
+    inline void addCard(const Card& card);
 
-    void clear();
+    inline void clear();
 
-    bool isEmpty() const;
+    inline bool isEmpty() const;
 
-    int size() const;
+    inline int size() const;
 
-    PileOfCards<Card> getCards() const { return cards; }
+    inline PileOfCards<Card> getCards() const { return cards; }
 
 private:
-    CommunityCards() : maxCards(5) {}
+    inline CommunityCards() : maxCards(5) {}
     static CommunityCards* instance;
     PileOfCards<Card> cards;
     const int maxCards;
