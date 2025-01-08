@@ -24,7 +24,8 @@ file(GLOB SOURCES "src/*.cpp" "main.cpp")
 file(GLOB SOURCES2 "include/*.h" "main.cpp")
 
 # Add the executable target with all source files
-add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES})
+add_executable(PokerGame main.cpp src/Card.cpp src/Game.cpp src/Player.cpp src/Utilities.cpp)
+target_include_directories(PokerGame PRIVATE include)
 
 # Ensure the include directory is part of the build process
 
